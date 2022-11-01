@@ -123,6 +123,7 @@ export const runtimeConfig =
         MYANIMELIST: window?.env?.MYANIMELIST,
         MATOMO_URL: window?.env?.MATOMO_URL,
         MATOMO_SITE_ID: window?.env?.MATOMO_SITE_ID,
+        MATOMO_TAG_URL: window?.env?.MATOMO_TAG_URL,
         SHARE: window?.env?.SHARE,
       }
     : {
@@ -441,6 +442,9 @@ export const runtimeConfig =
         MATOMO_URL: nodeIsProduction
           ? process.env.MATOMO_URL
           : process.env.RAZZLE_MATOMO_URL,
+        MATOMO_TAG_URL: nodeIsProduction
+          ? process.env.MATOMO_TAG_URL
+          : process.env.RAZZLE_MATOMO_TAG_URL,
         MATOMO_SITE_ID: nodeIsProduction
           ? process.env.MATOMO_SITE_ID
           : process.env.RAZZLE_MATOMO_SITE_ID,
