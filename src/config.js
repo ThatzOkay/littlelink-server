@@ -119,12 +119,17 @@ export const runtimeConfig =
         LINE: window?.env?.LINE,
         KAKAOTALK: window?.env?.KAKAOTALK,
         DESIGNBYHUMANS: window?.env?.DESIGNBYHUMANS,
+        VERO: window?.env?.VERO,
         DOCKERHUB: window?.env?.DOCKERHUB,
         MYANIMELIST: window?.env?.MYANIMELIST,
         MATOMO_URL: window?.env?.MATOMO_URL,
         MATOMO_SITE_ID: window?.env?.MATOMO_SITE_ID,
         MATOMO_TAG_URL: window?.env?.MATOMO_TAG_URL,
         SHARE: window?.env?.SHARE,
+        DROP_SHADOW: window?.env?.DROP_SHADOW,
+        FIVEHUNDREDPX: window?.env?.FIVEHUNDREDPX,
+        JETPHOTOS: window?.env?.JETPHOTOS,
+        THEME_OS: window?.env?.THEME_OS,
       }
     : {
         // server
@@ -433,6 +438,7 @@ export const runtimeConfig =
         DESIGNBYHUMANS: nodeIsProduction
           ? process.env.DESIGNBYHUMANS
           : process.env.RAZZLE_DESIGNBYHUMANS,
+        VERO: nodeIsProduction ? process.env.VERO : process.env.RAZZLE_VERO,
         DOCKERHUB: nodeIsProduction
           ? process.env.DOCKERHUB
           : process.env.RAZZLE_DOCKERHUB,
@@ -449,4 +455,16 @@ export const runtimeConfig =
           ? process.env.MATOMO_SITE_ID
           : process.env.RAZZLE_MATOMO_SITE_ID,
         SHARE: nodeIsProduction ? process.env.SHARE : process.env.RAZZLE_SHARE,
+        DROP_SHADOW: nodeIsProduction
+          ? process.env.DROP_SHADOW
+          : process.env.RAZZLE_DROP_SHADOW,
+        FIVEHUNDREDPX: nodeIsProduction
+          ? process.env.FIVEHUNDREDPX
+          : process.env.RAZZLE_FIVEHUNDREDPX,
+        JETPHOTOS: nodeIsProduction
+          ? process.env.JETPHOTOS
+          : process.env.RAZZLE_JETPHOTOS,
+        THEME_OS: nodeIsProduction
+          ? process.env.THEME_OS
+          : process.env.RAZZLE_THEME_OS,
       };

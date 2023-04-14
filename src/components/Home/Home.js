@@ -77,7 +77,10 @@ import lineLogo from '../../icons/linemessenger.svg';
 import kakaoLogo from '../../icons/kaokotalk.svg';
 import designByHumansLogo from '../../icons/designbyhumans.svg';
 import dockerhubLogo from '../../icons/docker.svg';
+import veroLogo from '../../icons/vero.svg';
 import myAnimeListLogo from '../../icons/myanimelist.svg';
+import fiveHundredPXLogo from '../../icons/500px.svg';
+import jetphotosLogo from '../../icons/jetphotos.svg';
 
 function Home(props) {
   let order = [];
@@ -409,6 +412,7 @@ function Home(props) {
                 <Button
                   name="mastodon"
                   href={runtimeConfig.MASTODON}
+                  rels="me noopener noreferrer"
                   displayName="Mastodon"
                   logo={mastodonLogo}
                   order={buttonOrder('MASTODON')}
@@ -819,6 +823,15 @@ function Home(props) {
                   order={buttonOrder('DOCKERHUB')}
                 />
               )}
+              {runtimeConfig.VERO && (
+                <Button
+                  name="vero"
+                  href={runtimeConfig.VERO}
+                  displayName="VERO"
+                  logo={veroLogo}
+                  order={buttonOrder('VERO')}
+                />
+              )}
               {runtimeConfig.MYANIMELIST && (
                 <Button
                   name="myAnimeList"
@@ -828,6 +841,24 @@ function Home(props) {
                   order={buttonOrder('MYANIMELIST')}
                 />
               )}
+              {runtimeConfig.FIVEHUNDREDPX && (
+                <Button
+                  name="500px"
+                  href={runtimeConfig.FIVEHUNDREDPX}
+                  displayName="500px"
+                  logo={fiveHundredPXLogo}
+                  order={buttonOrder('FIVEHUNDREDPX')}
+                />
+              )}
+              {runtimeConfig.JETPHOTOS && (
+                <Button
+                  name="jetphotos"
+                  href={runtimeConfig.JETPHOTOS}
+                  displayName="JetPhotos"
+                  logo={jetphotosLogo}
+                  order={buttonOrder('JETPHOTOS')}
+                />
+              )}
             </Sort>
             <div>
               <p className="footer">
@@ -835,11 +866,14 @@ function Home(props) {
                 {runtimeConfig.SHARE &&
                   runtimeConfig.OG_TITLE &&
                   runtimeConfig.OG_DESCRIPTION && (
-                    <Share
-                      url={runtimeConfig.SHARE}
-                      title={runtimeConfig.OG_TITLE}
-                      text={runtimeConfig.OG_DESCRIPTION}
-                    />
+                    <>
+                      <br />
+                      <Share
+                        url={runtimeConfig.SHARE}
+                        title={runtimeConfig.OG_TITLE}
+                        text={runtimeConfig.OG_DESCRIPTION}
+                      />
+                    </>
                   )}
               </p>
             </div>
